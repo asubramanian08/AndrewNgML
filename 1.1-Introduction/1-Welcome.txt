@@ -1,0 +1,7 @@
+Welcome to Machine Learning:
+    Its all around us: Google search, facial recognition, Spam emails
+    Machine Learning: Computer's learning without being explicitly programmed
+    Building AI or making truly intelligent machines might be by building neural networks like our brain
+Machine Learning Honor Code:
+    The code that we submit must be our own - no looking at other student's source code
+    Don't post code or quick fixes in discussion forum - ask conceptional questions

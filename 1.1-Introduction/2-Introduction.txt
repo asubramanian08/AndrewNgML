@@ -1,0 +1,83 @@
+Welcome:
+    We will learn state of the art machine learning and implement these algorithms
+    Using machine learning without knowing is: Search engines rank pages, ...
+    The AI dream of making truly learning robots by learning how the brain works
+    Just knowing the algorithms and math isn't good enough - learn how to implement it
+    We didn't know how to make programs do more interesting things - so machine learning stuck around
+    Examples of machine learning:
+        Database mining: datasets from automation and the web
+        What humans can't do: flying helicopter, handwriting recognition, NLP, computer vision
+        Self-customizing programs: recommendations - like amazon and netflix
+        Understand humans and brains
+    There is a lot of demand to learn machine learning
+What is machine learning: x2
+    No universal definition of machine learning: below are Arthur Samuel's and Tom Mitchell's definitions
+    Machine learning is the study of computers learning without being explicitly programmed
+    A computer learns from experience E if by performance measure P it improves on Task T
+    Question: Email spam learns by you marking something as spam. What is the task its trying to improve
+        Classifying emails as spam or not spam
+        Watching you label emails as spam or not spam
+        The number (or fraction) of email correctly identified as spam/not spam
+        None of the above - not a machine learning problem
+    Answer: A; B is E and C is P
+    Machine learning algorithms: Broad algorithm catagories
+        Supervised learning - tell the machine what to learn
+        unsupervised Leaning - the machine decides how to learn on its own
+        There are some others - reinforcement learning, recommender systems
+    Much bigger focus on knowing what algorithms to use when - best practices
+    NOTES: 2 machine learning definitions, catagories of learning algorithms
+How to use discussion forums:
+    Up-vote posts that are helpful, thoughtful, and useful
+    Report the posts that are abusive ... or violate the honor code
+    Follow general rules of communication on the forums
+Supervised Learning: x2
+    Supervise learning is one of the most common type of machine learning problem
+    Example: given housing prices and their square feet, determine what the price of a house should be
+        Choose - straight line or quadratic function from the data
+    Regression problem: continues valued number (the above is an example)
+    Supervised learning: given the right answers and then has to predict another right answer 
+    Example: Plots of tumor size if its malignant, find probability that a tumor it is malignant
+    Classification problem: Discrete valued output (the above is an example)
+        Can plot by having symbol for values -> then multiple qualifying attributes
+        The learning algorithm might divide the sections then determine most likely outcome
+    The goal is to use an infinite number of attributes to determine result
+    Support vector machine has a mathematical trick to deal with infinite number of features
+    Question: Predict how many identical items with be sold over 3 months:
+        It is a regression problem
+        It is a classification problem
+    Answer: A
+    Question: Decide if an account has been hacked
+        It is a regression problem
+        It is a classification problem
+    Answer: B
+    NOTE: supervised learning description, 2 supervised learning catagories, examples of catagories
+Unsupervised Learning: x2
+    Clustering: given a bunch of data points determine that clusters that are there
+    Example: Google news puts together many news articles that have similar topics
+        Given how expressed a gene is cluster people into groups
+    In unsupervised learning we are not giving the right answer - just make sense of the data
+    Some applications: organize computer clusters, social network, market segmentation, astronomical data
+    Cocktail party problem: multiple people talking, how will 2 differently placed microphones hear
+        The machine learning program will separate out the different voices
+        With just one line of code in the right environment this problem can be solved
+    We will use octave which is free open source software or mathLab
+    In silicon valley they prototype their code in octave because it is quick to implement
+    Question: which are unsupervised learning algorithms
+        spam filter
+        group news articles about the same story
+        discover market segments
+        learn if someone has diabetes
+    Answer: B, C
+    NOTE:
+        derive structure from data with unsupervised learning
+        There is no feedback based on predictions
+        2 unsupervised types: clustering, non-clustering (cocktail party)
+Who are Mentors:
+    Mentors are students pick by coursera who have already done that course
+    The are meant to set an example and report abuse ... but are not approved by Stanford University
+Get to Know your Classmates:
+    Interacting with your classmates will make the learning experience more enjoyable
+    On the meet and greet introduce yourself and look at two interesting profiles
+    Can update the coursera profile so people will better know who you are
+Frequently Asked Questions:
+    Not important - from discussion forums
