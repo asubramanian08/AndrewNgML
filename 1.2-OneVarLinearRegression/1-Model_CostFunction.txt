@@ -1,0 +1,86 @@
+Model Representation: x2
+    The first learning algorithm is liner regression - see the model and process
+    We are using the example of housing prices - dataset from portland, OR
+    This is again a supervised learning (given right answers), regression problem
+    Can draw a line to the dataset and determine what the price of someone's house should be
+    Training set: the dataset given to train the machine
+    Notation:
+        m - # of training examples
+        x - the input variable
+        y - target variable
+        (x,y) - one training example (a row in the training set table)
+        (x^(i),y^(i)) - the ith training example (i ≠ exponent)
+        h - hypothesis function given from the learning algorithm to map from x to y
+    Question: What is y^(3) in the below training set
+    Size in feet^2 (x) | Price ($) in 1000's (y)
+    -------------------|------------------------
+    2104               | 460
+    1416               | 232
+    1534               | 315
+    852                | 178
+    ...                | ...
+        1416
+        1534
+        315
+        0
+    Answer: C
+    How the algorithm works:
+        feed training set to learning algorithm
+        learning algorithm gives h (look at notation)
+    Univariate linear regression: How represent h - h_θ(x) = θ_0 + θ_1x (shorthand: h(x))
+    NOTE:
+        notation - X and Y is the space of all input and output variables respectively
+        formal statement of supervised learning (training set to learn h ... )
+        regression vs. classification problems
+Cost Function: x2
+    We will define the cost function to fit the best line to the data
+    Parameters: All θ_i's in the definition of h
+    How to choose the parameters (2 for Univariate linear regression)
+    Graph the function θ_0 + θ_1x by substituting the θ_i values for the learning algorithm output
+    Question: What are the θ_0 and θ_1 values of the below graph of h_θ(x)
+    3|    
+     |   x
+    2|  x
+     | x
+    1|x
+     x
+    0|_ _ _
+     0 1 2 3
+        θ_0 = 0, θ_1 = 1
+        θ_0 = 0.5, θ_1 = 1
+        θ_0 = 1, θ_1 = 0.5
+        θ_0 = 1, θ_1 = 1
+    Answer: B
+    Need Parameters so h(x) is close to y for the training examples (x,y)
+    Goal is to minimize ∑_(i=1)^m (h_θ(x^(i)) - y^(i))^2; To make math easier do 1/(2m) * (to minimize)
+    Cost function: J(θ_0,θ_1) = 1/2m * ∑_(i=1)^m (h_θ(x^(i)) - y^(i))^2; minimize J(θ_0,θ_1)
+    Squared error cost function: J(θ_0,θ_1) is the most reasonable choice for regression problems
+    Over the next few videos get better intuition to the cost function ~ J(θ_0,θ_1)
+    NOTE: Cost function definition and understanding, the 1/2 of mean is a convenience that cancels out
+Cost Function - Intuition I: x2
+    What is the cost function doing? - How should we use it?
+    Simplify h(x) to θ_1x or set θ_0 to 0 ~ this function will pass though (0,0)
+    Can plot the cost function for θ_1 to get better understanding
+    Working with the data set: (1,1); (2,2); (3,3)
+    J(θ_1) is the sum of the square distances between y^(i) and h_θ(x^(i))
+    J(1) = 0, J(0.5) ≈ 0.58, J(0) ≈ 2.3, J(-0.5) ≈ 5.15 ~ Parabola?
+    Question: What is J(0) with the above scenario
+        0
+        1/6
+        1
+        14/6
+    Answer: D
+    The optimization is find the min J(θ_1) - bottom of curve which finds what best fits data
+    Next we will look at J(θ_0,θ_1) or both variables
+    NOTE:
+        Objective is to make the best straight line so J(...) is min
+        Can plug in values for the functions, plotting can help visualize
+Cost Function - Intuition II: x2
+    This uses contour plots and contour figures - if don't understand that is ok
+    Before the plot was in a bowl shape - adding a another dimension (θ_0) creates a 3d bowl
+    Instead of looking at the 3d models we will use contour plots
+    On a contour plot of J(θ_0,θ_1) points on the same ellipse have the same J(θ_0,θ_1) values
+    The closer it gets to the smaller ellipse (or best values) the better fit it is
+    We want an efficient software to find the best answer
+    We will see higher dimensional figures that would be harder to visualize
+    NOTE: Contour plot with examples

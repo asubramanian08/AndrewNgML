@@ -1,0 +1,54 @@
+Gradient Descent: x2
+    Gradient descent is a general algorithm used all over machine learning to minimize a function
+    Start off with some guesses and keep changing θ_0 and θ_1 till a min
+    The algorithm tries finding the farthest it will go down in a baby step till a local optima
+    Changing the start point just a little could cause ending at different local optima
+    Algorithm: repeat until convergence θ_j := θ_j - ∂/∂θ_j * J(θ_0,θ_1) for j=0 and j=1
+        The := is assignment; α - learning rate; ∂/∂θ_j * J(θ_0,θ_1) - partial derivative term
+    Must simultaneously update θ_0 and θ_1: store values in temp then set
+    Question: Suppose θ_0= 1, θ_1= 2 and we simultaneously update θ_0 using the rule: θ_j := θ_j +
+    √(θ_0*θ_1) for j=0 and j=1. What are the resulting values of θ_0?
+        θ_0=1, θ_1=2
+        θ_0=1+√2, θ_1=2+√2
+        θ_0=2+√2, θ_1=1+√2
+        θ_0=1+√2, θ_1=2+√((1+√2)*2)
+    Answer: B
+    Next we are going to go over the derivative term
+    NOTE: Gradient descent purpose, taking steps (α), gradient descent algorithm, simultaneous update
+Gradient Descent Intuition: x2
+    What the algorithm is doing and why it is doing that
+    Let the function given to gradient descent only have one variable
+    Partial derivative for our purposes is the same as derivative
+    The derivative part finds the slope of the function
+    Learning rate: too small it will take too long; too large it might not convergence
+    Question: If vars are already at local optima:
+        Leave θ_1 unchanged
+        Change θ_1 in a random direction
+        Move θ_1 in the direction of the global minimum of J(θ_1)
+        Decrease θ_1
+    Answer: A; the derivative is 0
+    The gradient descent can get to the local optima even with α fixed - derivative is less
+    Putting the cost function and gradient descent will get out first machine learning algorithm
+    NOTE: Direction based on neg/pos slope, too large/small α, don't need to change α - lessening slope
+Gradient Descent for Linear Regression: x2
+    Now we are going to apple gradient descent to find min J(θ_0,θ_1)
+    Understanding partial derivative:
+        Expanding ∂/∂θ_j * J(θ_0,θ_1) -> ∂/∂θ_j * 1/2m * ∑_(i=1)^m (θ_0 + θ_1*x^(i) - y^(i))^2
+        When j = 0: 1/m * ∑_(i=1)^m (h(x^(i)) - y^(i))
+        When j = 1: 1/m * ∑_(i=1)^m (h(x^(i)) - y^(i)) * x^(i)
+        The above uses multi-variable calculus to prove
+    Linear Regression algorithm: repeat until convergence - (simultaneous update)
+        θ_0 := θ_0 - α * 1/m * ∑_(i=1)^m (h(x^(i)) - y^(i))
+        θ_1 := θ_1 - α * 1/m * ∑_(i=1)^m (h(x^(i)) - y^(i)) * x^(i)
+    Gradient descent always goes to the local optima but cost function is always a convex function
+    Batch gradient descent: the gradient descent uses all training examples
+    Question: Which are true
+        To make gradient descent converge, we must slowly decrease α over time.
+        Gradient descent is guaranteed to find the global minimum for any function J(θ_0,θ_1).
+        Gradient descent can converge even if α is kept fixed. (But α cannot be too large, or else it may
+    fail to converge.)
+        For the specific choice of cost function J(θ_0,θ_1) used in linear regression, there are no local
+    optima (other than the global optimum).
+    Answer: C, D
+    Normal Equations Method: mathematically solve this problem with iterative steps - less scalable
+    NOTE: linear regression function, derive ∂/(∂*θj) * J(θ), local optima - convex function
