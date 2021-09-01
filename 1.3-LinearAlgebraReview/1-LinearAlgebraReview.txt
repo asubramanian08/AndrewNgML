@@ -1,0 +1,192 @@
+Matrices and Vectors: x2
+    Matrix: A rectangular array of numbers written between square brackets ~ 2d array
+    Dimensions of Matrix: #Rows × #Cols matrix or ℝ^(#Rows × #Cols)
+    Question: Check that statements that are true
+        ⎡1 2⎤
+        ⎢4 0⎥
+        ⎣0 1⎦ is a 2×3 matrix
+        ⎡0 1 4 2⎤
+        ⎣3 4 0 9⎦ is a 4×2 matrix
+        ⎡0  4 2⎤
+        ⎢3  4 9⎥
+        ⎣5 -1 0⎦ is a 3×3 matrix
+        [1 2] is a 1×2 matrix.
+    Answer A, C, D
+    Indexing: A_(ij) refers to the element in the ith row and jth column in matrix A (outside is undefined)
+    Don't need to memorize everything now - refer to course website and lecture
+    Question: The matrix A is shown below
+    ⎡85 76 66  5⎤
+    ⎢94 75 18 28⎥
+    ⎣68 40 72  5⎦ What is the values of A_(32)?
+        18
+        28
+        76
+        40
+    Answer: D
+    Vector: A matrix that has one column; n rows -> n-dimensional vector or ℝ^n
+    Indexing: y_i is ith element; can have 0-indexed or 1-indexed vector; 1-indexed more used ~default
+    Convention: Uppercase letter for matrix and lower case for vectors
+    NOTE: Matrix, Vector ~Is a Matrix, indexing, vector describing, 1-indexed ~default, naming convention,
+        Scalar: single valued object, ℝ: Set of all Scalar numbers
+        Octave/Matlab code:
+            Matrix: [] with ,'s for listing numbers and ; as new row ~[1,2,3;4,5,6;7,8,9]
+            Vector: Same as a matrix but just one number per line
+            size(A): tell the dimensions of matrix (vector are n,1)
+            [x,y]=: setting first value to x and second to y (with size() ...)
+            Setting: Can set size() to normal variable - prints spaced values
+            A(x,y): Indexing matrix A in xth row, yth column (1-indexed)
+Addition and Scalar Multiplication: x2
+    Adding: Add same indexed numbers; only add same dimensional matrices; answer has same dimensions
+    Question: What is ⎡ 8 6  9⎤ + ⎡3 10  2⎤
+                      ⎣10 1 10⎦   ⎣6  1 -1⎦
+        ⎡5 -4  7⎤
+        ⎣4  0 11⎦
+        ⎡11 16 11⎤
+        ⎣16  2  9⎦
+        ⎡14  7  8⎤
+        ⎣13 11 12⎦
+        ⎡ 8 6  9⎤
+        ⎣10 1 10⎦
+    Answer: B
+    Multiplication by Scalar: Multiply each number by Scalar number; answer has same dimensions
+    Question: What is 2 × ⎡4 5⎤
+                          ⎣1 7⎦
+        ⎡8 10⎤
+        ⎣2 14⎦
+        ⎡8 5⎤
+        ⎣1 7⎦
+        ⎡8 10⎤
+        ⎣1  7⎦
+        ⎡4  5⎤
+        ⎣1 14⎦
+    Answer: A
+    Can combine multiple matrix operations with order of operations
+                      ⎡4⎤           ⎡2⎤
+    Question: What is ⎢6⎥ / 2 - 3 × ⎢1⎥?
+                      ⎣7⎦           ⎣0⎦
+        ⎡4⎤
+        ⎢0⎥
+        ⎣5⎦
+        ⎡-4⎤
+        ⎢-1⎥
+        ⎣ 3⎦
+        ⎡ -4⎤
+        ⎢  0⎥
+        ⎣3.5⎦
+        ⎡  0⎤
+        ⎢  2⎥
+        ⎣3.5⎦
+        Answer: C
+    NOTE: Add and Sub are element-wise (corresponding element), scaler multiplication and division
+        Octave/Matlab code: Just do operation on vars (s * A), can add/sub scaler both orderings
+Matrix Vector multiplication: x2
+    Multiplication: The result is a vector; r_i= ∑_(j=1) (M_(ij) × v_j); vector rows must = matrix cols
+        m×n matrix * n-dimensional vector = m-dimensional vector
+                                                          ⎡ 1  2 2 5⎤   ⎡1⎤
+    Question: Consider the product of these two matrices: ⎢ 0  3 0 4⎥ × ⎢3⎥
+                                                          ⎣-1 -2 0 0⎦   ⎢2⎥
+                                                                        ⎣1⎦
+    What is the dimension of the product
+        3 × 2
+        3 × 4
+        1 × 3
+        4 × 4
+    Answer: A
+                      ⎡1 0 3⎤   ⎡1⎤
+    Question: What is ⎢2 1 5⎥ × ⎢6⎥?
+                      ⎣3 1 2⎦   ⎣2⎦
+        ⎡ 5⎤
+        ⎢10⎥
+        ⎣ 1⎦
+        ⎡ 7⎤
+        ⎢12⎥
+        ⎣ 7⎦
+        ⎡ 7⎤
+        ⎢18⎥
+        ⎣13⎦
+        ⎡ 1⎤
+        ⎢18⎥
+        ⎣13⎦
+    Answer: C
+    Can apply a function to data with matrix multiplication:
+        Let the function be h(x) = θ_0 + θ_1x
+        Make a matrix with 1s in the first column and the data in to second
+        Make a vector [θ_0; θ_1] or with the parameters
+        The prediction is the matrix × the vector ~will have h(x^(i)) on row i
+    NOTE: The multiplication for matrix and vector, Octave/MathLab code: just like any multiplication
+Matrix Matrix multiplication: x2
+    Matrix-Matrix multiplication is a key step to solve linear regression without gradient descent
+    Multiplication: break about the matrix, do matrix vector multiplication for them all, combine answer
+        m×n matrix * n×o matrix = m×o matrix; r_(ij) = ∑_(k=1)^o (m1_(io)×m2_(oj)); M × v was when o=1
+                              ⎡1 3⎤           ⎡7 9⎤                           ⎡1 3⎤           ⎡1 3⎤
+    Question: In the equation ⎢2 4⎥ × ⎡1 0⎤ = ⎢a b⎥, what is a? Hint: Compute ⎢2 4⎥ × ⎡1⎤ and ⎢2 4⎥ × ⎡0⎤.
+                              ⎣0 5⎦   ⎣2 3⎦   ⎣c d⎦                           ⎣0 5⎦   ⎣2⎦     ⎣0 5⎦   ⎣3⎦
+        7
+        12
+        10
+        6
+    Answer: C
+                              ⎡1 3⎤           ⎡7 9⎤                           ⎡1 3⎤           ⎡1 3⎤
+    Question: In the equation ⎢2 4⎥ × ⎡1 0⎤ = ⎢a b⎥, what is b? Hint: Compute ⎢2 4⎥ × ⎡1⎤ and ⎢2 4⎥ × ⎡0⎤.
+                              ⎣0 5⎦   ⎣2 3⎦   ⎣c d⎦                           ⎣0 5⎦   ⎣2⎦     ⎣0 5⎦   ⎣3⎦
+        7
+        10
+        12
+        15
+    Answer: C
+                              ⎡1 3⎤           ⎡7 9⎤                           ⎡1 3⎤           ⎡1 3⎤
+    Question: In the equation ⎢2 4⎥ × ⎡1 0⎤ = ⎢a b⎥, what is c? Hint: Compute ⎢2 4⎥ × ⎡1⎤ and ⎢2 4⎥ × ⎡0⎤.
+                              ⎣0 5⎦   ⎣2 3⎦   ⎣c d⎦                           ⎣0 5⎦   ⎣2⎦     ⎣0 5⎦   ⎣3⎦
+        7
+        12
+        10
+        15
+    Answer: C
+                              ⎡1 3⎤           ⎡7 9⎤                           ⎡1 3⎤           ⎡1 3⎤
+    Question: In the equation ⎢2 4⎥ × ⎡1 0⎤ = ⎢a b⎥, what is d? Hint: Compute ⎢2 4⎥ × ⎡1⎤ and ⎢2 4⎥ × ⎡0⎤.
+                              ⎣0 5⎦   ⎣2 3⎦   ⎣c d⎦                           ⎣0 5⎦   ⎣2⎦     ⎣0 5⎦   ⎣3⎦
+        8
+        10
+        12
+        15
+    Answer: D
+    Now with matrix matrix multiplication, can apply multiple functions and find different predictions
+    There are great libraries that can take advantage and can make the multiplication more efficient
+    HINT: The multiplication for matrix and matrix, Octave/MathLab code: just like any multiplication
+Matrix Multiplication Properties: x2
+    Matrix multiplication is useful because a lot of computation can be packed in one operation
+    Matrix multiplication is not commutative - can't swap terms, dimensions are not the same
+    Matrix multiplication is associative - (A×B)×C = A×(B×C)
+    Identity Matrix: M × I = I × M = M, 1 is an identity number, I has 1 on diagonal and 0s elsewhere
+                      ⎡1 0 0⎤   ⎡1⎤
+    Question: What is ⎢0 1 0⎥ × ⎢3⎥?
+                      ⎣0 0 1⎦   ⎣2⎦
+        ⎡2⎤
+        ⎢3⎥
+        ⎣1⎦
+        ⎡2⎤
+        ⎢1⎥
+        ⎣3⎦
+        ⎡1⎤
+        ⎢3⎥
+        ⎣2⎦
+        [1 3 2]
+    Answer: C
+    NOTE: Matrix not commutative, Matrix is associative, identity matrix
+Inverse and Transpose: x2
+    Inverse meaning: Multiplying a number by its inverse gives identity x * x^(-1) = 1
+    Matrix Inverse: the inverse of A is A^(-1), only square matrix (m×m) have inverse, use lib to find
+        if a matrix doesn't have an inverse it is singular or degenerate
+    Matrix Transpose: written as A^T, the first row becomes first col ..., A^T_(ij)=A_(ji)
+    Question: What is ⎡0 3⎤^T?
+                      ⎣1 4⎦
+        ⎡0 4⎤
+        ⎣1 3⎦
+        ⎡4 3⎤
+        ⎣1 0⎦
+        ⎡4 1⎤
+        ⎣3 0⎦
+        ⎡0 1⎤
+        ⎣3 4⎦
+    Answer: D
+    NOTE: inverse - if can't singular or degenerate (inv(A)), transpose (A'),
