@@ -1,4 +1,4 @@
-Gradient Descent: x2
+Gradient Descent: ×2
     Gradient descent is a general algorithm used all over machine learning to minimize a function
     Start off with some guesses and keep changing θ_0 and θ_1 till a min
     The algorithm tries finding the farthest it will go down in a baby step till a local optima
@@ -15,7 +15,7 @@ Gradient Descent: x2
     Answer: B
     Next we are going to go over the derivative term
     NOTE: Gradient descent purpose, taking steps (α), gradient descent algorithm, simultaneous update
-Gradient Descent Intuition: x2
+Gradient Descent Intuition: ×2
     What the algorithm is doing and why it is doing that
     Let the function given to gradient descent only have one variable
     Partial derivative for our purposes is the same as derivative
@@ -30,7 +30,7 @@ Gradient Descent Intuition: x2
     The gradient descent can get to the local optima even with α fixed - derivative is less
     Putting the cost function and gradient descent will get out first machine learning algorithm
     NOTE: Direction based on neg/pos slope, too large/small α, don't need to change α - lessening slope
-Gradient Descent for Linear Regression: x2
+Gradient Descent for Linear Regression: ×2
     Now we are going to apple gradient descent to find min J(θ_0,θ_1)
     Understanding partial derivative:
         Expanding ∂/∂θ_j * J(θ_0,θ_1) -> ∂/∂θ_j * 1/2m * ∑_(i=1)^m (θ_0 + θ_1*x^(i) - y^(i))^2

@@ -10,7 +10,7 @@ Welcome:
         Self-customizing programs: recommendations - like amazon and netflix
         Understand humans and brains
     There is a lot of demand to learn machine learning
-What is machine learning: x2
+What is machine learning: ×2
     No universal definition of machine learning: below are Arthur Samuel's and Tom Mitchell's definitions
     Machine learning is the study of computers learning without being explicitly programmed
     A computer learns from experience E if by performance measure P it improves on Task T
@@ -30,7 +30,7 @@ How to use discussion forums:
     Up-vote posts that are helpful, thoughtful, and useful
     Report the posts that are abusive ... or violate the honor code
     Follow general rules of communication on the forums
-Supervised Learning: x2
+Supervised Learning: ×2
     Supervise learning is one of the most common type of machine learning problem
     Example: given housing prices and their square feet, determine what the price of a house should be
         Choose - straight line or quadratic function from the data
@@ -51,7 +51,7 @@ Supervised Learning: x2
         It is a classification problem
     Answer: B
     NOTE: supervised learning description, 2 supervised learning catagories, examples of catagories
-Unsupervised Learning: x2
+Unsupervised Learning: ×2
     Clustering: given a bunch of data points determine that clusters that are there
     Example: Google news puts together many news articles that have similar topics
         Given how expressed a gene is cluster people into groups
