@@ -60,7 +60,7 @@ Unsupervised Learning: x2
     Cocktail party problem: multiple people talking, how will 2 differently placed microphones hear
         The machine learning program will separate out the different voices
         With just one line of code in the right environment this problem can be solved
-    We will use octave which is free open source software or mathLab
+    We will use octave which is free open source software or MATLAB
     In silicon valley they prototype their code in octave because it is quick to implement
     Question: which are unsupervised learning algorithms
         spam filter

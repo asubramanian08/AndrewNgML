@@ -113,7 +113,7 @@ Matrix Vector multiplication: x2
         Make a matrix with 1s in the first column and the data in to second
         Make a vector [θ_0; θ_1] or with the parameters
         The prediction is the matrix × the vector ~will have h(x^(i)) on row i
-    NOTE: The multiplication for matrix and vector, Octave/MathLab code: just like any multiplication
+    NOTE: The multiplication for matrix and vector, Octave/MATLAB code: just like any multiplication
 Matrix Matrix multiplication: x2
     Matrix-Matrix multiplication is a key step to solve linear regression without gradient descent
     Multiplication: break about the matrix, do matrix vector multiplication for them all, combine answer
@@ -152,7 +152,7 @@ Matrix Matrix multiplication: x2
     Answer: D
     Now with matrix matrix multiplication, can apply multiple functions and find different predictions
     There are great libraries that can take advantage and can make the multiplication more efficient
-    HINT: The multiplication for matrix and matrix, Octave/MathLab code: just like any multiplication
+    HINT: The multiplication for matrix and matrix, Octave/MATLAB code: just like any multiplication
 Matrix Multiplication Properties: x2
     Matrix multiplication is useful because a lot of computation can be packed in one operation
     Matrix multiplication is not commutative - can't swap terms, dimensions are not the same
