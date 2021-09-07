@@ -1,0 +1,86 @@
+Multiple Features: ×2
+    Now that are multiple features/information catagories to determine y
+    Notation:
+        n = number of features
+        x^(i) = the input features in ith training example ~vector
+        x^(i)_j: the jth feature in the ith training example
+    Question: What is x^(4)_1?
+    Size(x_1) | #bedrooms(x_2) | #floors(x_3) | houseAge(x_4) | Price(y)
+    2104      | 5              | 1            | 45            | 460
+    1416      | 3              | 2            | 40            | 232
+    1534      | 3              | 2            | 30            | 315
+    852       | 2              | 1            | 36            | 178
+    ...       | ...            | ...          | ...           | ...
+        The size of the 1st home in the training set
+        The age of the 1st home in the training set
+        The size of the 4th home in the training set
+        The age of the 4th home in the training set
+    Answer: C
+    Hypothesis: h_θ(x) = θ_0 + θ_1*x_1 + θ_2*x_2 + ... + θ_n*x_n --> h_θ(x) = θ^T*x
+        Let x_0 = 1: x and θ are a n+1-dimensional vectors -> h_θ(x) = θ^T*x
+    NOTE: multivariate linear regression, notation, hypothesis ~h_θ(x) --> θ^T*x, x_0=1 for convenience
+Gradient Descent for Multiple Variables: ×2
+    The parameters are: θ_0 ... θ_n or a θ n+1-dimensional vector
+    Cost function: J(θ) instead of J(θ_0, θ_1, ... θ_n)
+    Question: Which of the following are correct definitions of J(θ)?
+        J(θ) = 1/2m * ∑_(i=1)^m (θ^T*x^(i) - y^(i))^2
+        J(θ) = 1/2m * ∑_(i=1)^m (∑_(j=0)^n (θ_j*x^(i)_j) - y^(i))^2
+        J(θ) = 1/2m * ∑_(i=1)^m (∑_(j=1)^n (θ_j*x^(i)_j) - y^(i))^2
+        J(θ) = 1/2m * ∑_(i=1)^m (∑_(j=0)^n (θ_j*x^(i)_j) - ∑_(j=0)^n (y^(i)_j))^2
+    Answer: A, B
+    Gradient descent: repeat till convergence θ_j := θ_j - α * ∂/(∂*θj) * J(θ) (simultaneous update j=0-n)
+        After partial derivative: θ_j := θ_j - α * 1/m * ∑_(i=1)^m (h(x^(i)) - y^(i)) * x^(i)_j
+        Solving for j=0 and j=1 they are the same as the univariate linear regression
+    NOTE: new gradient descent algorithm, comparing new algo with old one
+Gradient Descent in Practice I - Feature Scaling:
+    Some of the practical trick for make gradient descent work well - next 2 lectures
+    If the features are on different scales - long time meandering around ~α is same for both scales
+    Feature Scaling: scale feature to similar range gradient descent can take a more direct approach
+        Most of the time use -1 to 1 (or close enough)
+    Mean normalization: Can subtract x_i - μ_i before dividing (by s_i) to make mean about 0
+    μ_i = avg or x_i in training set; s_i = range or stddev of x_i in training set
+    Question: Suppose you are using a learning algorithm to estimate the price of houses in a city. You
+    want one of your features x_i to capture the age of the house. In your training set, all of your houses
+    have an age between 30 and 50 years, with an average age of 38 years. Which of the following would you
+    use as features, assuming you use feature scaling and mean normalization?
+        x_i = age of house
+        x_i = age of house / 50
+        x_i = (age of house - 38) / 50
+        x_i = (age of house - 38) / 20
+    Answer: D
+    NOTE: Put to about same range, feature scaling, mean normalization, x_i := (x_i-μ_i)/s_i
+Gradient Descent in Practice II - Learning Rate:
+    More practical ideas that centers around the learning rate α
+    Debugging: Plot gradient descent x = # of iterations and y = min J(θ)
+        make sure it goes down each iterations, flattens toward the end (end varies a lot)
+    Automatic convergence test: see if the gradient descent changes less than a small number
+    If gradient descent isn't working (goes up or doesn't convergence) -> decrease α
+    If in the plot that is little progress -> increase α
+    Question: Suppose a friend ran gradient descent three times, with a = 0.01, 0.1 and 1, and got the
+    following three plots (labeled A, B, and C): Plot A shows J(θ)sharply decreasing after the first few
+    iterations, and then leveling off. Plot B shows J(θ) slowly decreasing at every iteration, and still
+    decreasing at the last iteration. Plot C shows J(θ) increasing every iteration, with the increase
+    growing in every iteration. Which plots corresponds to which values of α?
+        A is α = 0.01, B is α = 0.1, C is α = 1
+        A is α = 0.1, B is α = 0.01, C is α = 1
+        A is α = 1, B is α = 0.01, C is α = 0.1
+        A is α = 1, B is α = 0.1, C is α = 0.01
+    Answer: B
+    Try α with range of values: 0.0001, 0.0003, 0.001, ... 1, 3, ... (increase is about ×3)
+    NOTE: Debugging (plot and pick α), Automatic Converge Test, how to change α based on plot
+Features and Polynomial Regression x2:
+    Make a new Feature: Given two features (like the depth and frontage) can calculate a new one
+    Polynomial Regression: create new features for (size)^2 and (size)^3 ... to make poly-function
+        Remember feature scaling here - will get worse without it; can even use √ ... to feature
+    Question: Suppose you want to predict a house's price as a function of its size. Your model is
+    h_θ(x) = θ_0 + θ_1(size) + θ_2√(size). Suppose size ranges from 1 to 1000 (feet^2). You will implement
+    this by fitting a model h_θ(x) = θ_0 + θ_1*x_1 + θ_2*x_2. Finally, suppose you want to use feature
+    scaling (without mean normalization). Which of the following choices for x_1 and x_2 should you use?
+    (Note: √1000 ≈ 32.)
+        x_1 = size, x_2 = 32√(size)
+        x_1 = 32(size), x_2 = √(size)
+        x_1 = size/1000, x_2 = √(size)/32
+        x_1 = size/32, x_2 = √(size)
+    Answer: C
+    Idea - we can choose what features to use based on the data (chooses for you)
+    NOTE: combine features, change hypothesis curve, polynomial function, remember feature scaling

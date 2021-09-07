@@ -1,0 +1,7 @@
+Working on and Submitting Programming Assignments:
+    How to use the system to verify if I have the right answer for the programming exercise
+    Can be asked to edit files
+    Submit: go octave (can check), "submit()", part #, course website for email and submission password
+    The password can be the submission password or login password
+Programming tips from Mentors:
+    A lot of compiled tips - look at the discussion forum

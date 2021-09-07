@@ -1,0 +1,55 @@
+Setting up your Programming Assignment Environment:
+    This course has many programming assignments that need to be submitted with Octave or MATLAB
+    Octave: Free open source platform, text interface and experimental graphical one
+    MATLAB: Proprietary software, free trial licence for completion of this course
+    Both software are free for this course then MATLAB has to be paid for
+    Quality Difference: MATLAB may run smoother for Mac and be more robust but both have been used
+    Installation: Found in next material
+Access to MATLAB Online and the Exercise Files for MATLAB Users:
+    A MATLAB online licence has been provided - web interface of MATLAB desktop program
+    To get MATLAB online:
+        Create an account: https://www.mathworks.com/mwaccount/register
+        Apply licence: https://www.mathworks.com/licensecenter/classroom/machine_learning/
+        Click Access MATLAB Online and log it
+        Upload the exercise files
+    ex1-ex8-matlab.zip are the exercise files for MATLAB online or MATLAB R2018b or later
+    MATLAB online users should: (MATLAB desktop users can stop the exercise where they choose)
+        Click 'Upload' in the 'Home' tab of MATLAB online
+        Select the ex1-ex8-matlab.zip file and open it
+        Enter "unzip ex1-ex8-matlab.zip" at the command line
+    To do the programming assignments:
+        Don't download the exercise files for the first programming exercise
+        Record assignment token on the exercise page to submit solution
+        The READ ME file will go though how to complete the exercises
+        Look at the READ ME file for help with common issues
+Installing Octave on Windows:
+    Install link: http://wiki.octave.org/Octave_for_Microsoft_Windows
+    Patch: https://www.coursera.org/learn/machine-learning/discussions/vgCyrQoMEeWv5yIAC00Eog?
+    Don't install Octave 4.0.0 - look at "Resources" menu of "Installation Issues"
+Installing Octave on Mac OS X (10.10 Yosemite and 10.9 Mavericks and Later):
+    The Mac OS X Gatekeeper might prevent installation: http://support.apple.com/en-us/HT202491
+    Go to Security & Privacy and allow app downloads from anywhere
+    Download 3.8.0 (http://sourceforge.net/projects/octave/files/Octave%20MacOSX%20Binary/2013-12-30%20
+    binary%20installer%20of%20Octave%203.8.0%20for%20OSX%2010.9.1%20%28beta%29/GNU_Octave_3.8.0-6.dmg/
+    download) or the latest version that isn't 4.0.0
+    Open the dmg then the mpkg inside
+    Follow the installation instructions
+    The app is Octave-cli - the text interface for octave
+    There is an experimental Octave-gui but Octave-cli is more stable
+    If you use Homebrew or MacPorts ...: http://wiki.octave.org/Octave_for_macOS#Package_Managers
+    Don't install Octave 4.0.0 - look at "Resources" menu of "Installation Issues"
+Installing Octave on Mac OS X (10.8 Mountain Lion and Earlier):
+    Octave doesn't support this: use Homebrew: http://wiki.octave.org/Octave_for_MacOS_X#Homebrew
+    Don't install Octave 4.0.0 - look at "Resources" menu of "Installation Issues"
+Installing Octave on GNU/Linux:
+    Recommend using system package manager: http://wiki.octave.org/Octave_for_GNU/Linux
+    On ubuntu: sudo apt-get update && sudo apt-get install octave
+    On Fedora: sudo yum install octave-forge
+    For other GNU/Linux: http://wiki.octave.org/Octave_for_GNU/Linux
+    Don't install Octave 4.0.0 - look at "Resources" menu of "Installation Issues"
+More Octave/MATLAB resources:
+    Type help then function name for documentation (both octave and MATLAB)
+    Octave docs: http://www.gnu.org/software/octave/doc/interpreter/
+    MATLAB docs: http://www.mathworks.com/help/matlab/
+    MATLAB with Onramp (tutorial) - needs account: https://matlabacademy.mathworks.com/
+    Multiple tutorial links are on the coursera page

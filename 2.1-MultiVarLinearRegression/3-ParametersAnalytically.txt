@@ -1,0 +1,43 @@
+Normal Equations x2:
+    Gradient Descent solve the problem iteratively - solve the parameters θ analytically or one step
+    J(θ) = aθ^2 + bθ + c so θ is a scalar value -> set derivative if J(θ) to 0 and solve
+    vector θ and with our current cost function we can set all the partial derivatives to 0 and solve
+        θ ∈ ℝ^(n+1); J(θ_0, θ_1, ..., θ_m) = 1/2m * ∑_(i=1)^m (h_θ(x^(i)) - y^(i)); ∂/(∂*θ_j) * J(θ) = 0
+    Create a matrix X with all x_is from the training set and include x_0 as 1 -> m × (n+1) dimensional
+    Make a vector y that is all the training set ys -> m-dimensional vector
+    Find θ values to min cost function: θ = (X^T*X)^-1 * X^T * y -> explained later
+    The X (design matrix) 's ith row is the transpose of the ith training example vector
+    Question: Suppose you have the training in the table below:
+    age(x_1) | height(x_2) | weight(y)
+    ---------|-------------|----------
+    4        | 89          | 16
+    9        | 124         | 28
+    5        | 103         | 20
+    You would like to predict a child's weight as a function of his age and height with the model 
+    weight = θ_0 + θ_1*age + θ_2*height. What are X and y?
+            ⎡4 89 ⎤      ⎡16⎤
+        X = ⎢9 124⎥, y = ⎢28⎥
+            ⎣5 103⎦      ⎣20⎦
+            ⎡1 4 89 ⎤      ⎡1 16⎤
+        X = ⎢1 9 124⎥, y = ⎢1 28⎥
+            ⎣1 5 103⎦      ⎣1 20⎦
+            ⎡4 89  1⎤      ⎡16⎤
+        X = ⎢9 124 1⎥, y = ⎢28⎥
+            ⎣5 103 1⎦      ⎣20⎦
+            ⎡1 4 89 ⎤      ⎡16⎤
+        X = ⎢1 9 124⎥, y = ⎢28⎥
+            ⎣1 5 103⎦      ⎣20⎦
+    Answer: C
+    Code (computing θ values): pinv(X'*X)*X'*y the code representation of (X^T*X)^-1 * X^T * y
+    Feature scaling is not necessary for the normal equation method
+    Advantages: must choose α, doesn't iterate
+    Disadvantages: slow - (X^T*X)^-1 takes O(n^3) time, n~10,000 is when to switch
+    Normal Equations is better then gradient descent if n is in the 1000s
+    Normal Equations doesn't work for more complex machine learning algorithms - gradient descent does
+    NOTE: θ = (X^T*X)^-1 * X^T * y, no feature scaling, advantages / disadvantages - O(n^3), switch n=10000
+Normal Equations Noninvertibility x2:
+    This is a more advanced concept - optional material
+    In the formula θ = (X^T*X)^-1 * X^T * y, what if X^T*X is not invertible
+    Using pinv (instead of inv) the code in octave will do the right thing
+    If X^T*X is not invertible: there are redundant features or too many features (m≤n) ~regularization
+    NOTE: pinv not inv, redundant features ~linearly related, too many features (delete or regularization)
