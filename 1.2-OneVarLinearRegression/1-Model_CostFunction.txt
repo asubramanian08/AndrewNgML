@@ -38,7 +38,7 @@ Cost Function: ×2
     How to choose the parameters (2 for Univariate linear regression)
     Graph the function θ_0 + θ_1x by substituting the θ_i values for the learning algorithm output
     Question: What are the θ_0 and θ_1 values of the below graph of h_θ(x)
-    3|    
+    3|   
      |   x
     2|  x
      | x

@@ -35,7 +35,7 @@ Supervised Learning: ×2
     Example: given housing prices and their square feet, determine what the price of a house should be
         Choose - straight line or quadratic function from the data
     Regression problem: continues valued number (the above is an example)
-    Supervised learning: given the right answers and then has to predict another right answer 
+    Supervised learning: given the right answers and then has to predict another right answer
     Example: Plots of tumor size if its malignant, find probability that a tumor it is malignant
     Classification problem: Discrete valued output (the above is an example)
         Can plot by having symbol for values -> then multiple qualifying attributes

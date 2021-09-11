@@ -13,7 +13,7 @@ Normal Equations x2:
     4        | 89          | 16
     9        | 124         | 28
     5        | 103         | 20
-    You would like to predict a child's weight as a function of his age and height with the model 
+    You would like to predict a child's weight as a function of his age and height with the model
     weight = θ_0 + θ_1*age + θ_2*height. What are X and y?
             ⎡4 89 ⎤      ⎡16⎤
         X = ⎢9 124⎥, y = ⎢28⎥
