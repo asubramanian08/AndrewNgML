@@ -2,7 +2,7 @@
 Coursera Machine Learning by Stanford University
 
 ### About
-I took Coursera's [Machine Learning](https://www.coursera.org/learn/machine-learning) course by Stanford University around the beginning of the 2021 school year. Andrew Ng teaches supervised and unsupervised machine learning as well as some of the best practices in machine learning.
+I took Coursera's [Machine Learning](https://www.coursera.org/learn/machine-learning) course by Stanford University around the beginning of the 2021 school year. Andrew Ng teaches supervised and unsupervised machine learning as well as some of the best practices in machine learning. This course has taught me so much about machine learning and code creation; I would definitely recommend it to anyone who wants to start learning machine learning.
 
 ### Organization
 Each topic has its own folder:
