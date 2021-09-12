@@ -1,0 +1,89 @@
+Basic Operations:
+    Learning Octave code - implement the learning algorithms were need
+    Students learning machine learning better in a high level language like octave
+    Many people prototype in octave then write their programming in java or c++
+    On the course website has the commands discussed in this video for reference
+    Watch the tutorials -> install octave -> download the transcript -> test out the commands
+    Commands:
+        Math: Add, Subtract, multiply, divide, exponent
+        Logic: equals?, not equals (~=), and, or, xor (function)
+        Change prompt with: PS1('_prompt_')
+        Variables: assignment(int,string,bool,...), suppress output(;), print (write var)
+        Display: display ~disp() -complex prints(sprintf), format(long or short print)
+        Array/Matrix: form([line;line;...]), vector = matrix, range(start:increment:end), oneMatrix~ones(),
+    zeroMatrix~zeros(), RandomMatrix~rand() from 0 to 1, GaussianDistributionMatrix~randn(),
+    histogramPlot~hist(matrix,#Bins), identityMatrix~eye(sideLen)
+        Help: type help on a function to get the documentation ~can do "help help"
+Moving Data Around:
+    size(matrix): 1×2 matrix for rows then columns; can include 1 or 2 for a scalar rows or columns
+    length(matrix): the length of the longest side ~ usually to a vector
+    directory: pwd: show the current directory or path; cd: change directory, ls: list directories
+    load: bring file, can write file write after or load('fileName')
+    who: the variables in the current workspace or whos for the detailed view
+    clear: get rid of a variable; without anything deletes are variables
+    data range: ~fromVar(start:end) copy/use the data from that range
+    save: save a variable to a file; .mat - compressed data; .txt - text; use -ascii for ascii chars
+    index: Matrix(i,j) for ith row and jth column; to fetch everything use a ':' - Matrix(i,:)
+        can give a vector as index - Matrix([1,2],:) for all values in the 1st and second row
+        This can be used to set values in the matrix
+    Append: M = [M, [columnVector]] to add the column vector to the matrix
+        C = [A, B] make C as A then B (B is right of A)
+        C = [A; B] make C as A then B (B is below A)
+Computing on Data:
+    Math: can do math on full matrix with regular symbols; '.' before symbol is element wise math
+        log(), exp(), abs() for element wise operations on matrix, -Matrix = -1 * matrix
+    Complex Math: Transpose is '; max() set to val or val and index(column), 1 or 2 for row of column;
+        comparing - element wise, returns 1 or 0 matrix; sum() and prod() to every element; floor() and
+        ceil() of every element; pinv(): pseudo inverse of a matrix
+    find(): show location of true values in matrix; returns rows and cols
+    magic(): matrix what rows, cols, and diags add to the same value
+    Matrix(:): Turn the matrix to a vector
+Plotting Data:
+    Plot to help visualize and check if the algorithm is good or can be improved
+    plot(): the x values, y values, (optional) color
+    hold on: keep the previous plot (put plot on top of another)
+    xlabel or ylabel: label the axis
+    legend(): label the lines or make a legend
+    to save: do print -dpng 'FILE.png'; to save in other formats to 'help plot'
+    close: close the plot window
+    figure(a): set the figure - multiple plot windows
+    subplot(): divide into grid of param1, param2; edit the param3 section (later put plot there)
+    axis(): set the axis (x and y ranges) for the graph or plot
+    clf: clears a figure
+    imagessc(matrix): plots a matrix of colors representing the values
+    colorbar: show the different shades of color and what they correspond to
+    colormap: the the color range (grey)
+    comma chaining: add commands after each other in one line
+Control Statements: for, while, if statement:
+    when you would use and indent - a comma is needed and should ended with "end"
+    for: ""for" var 1-by-nMatrix," then proceed with the instructions then end; use break + continue also
+    while: ""while" condition," then instructions then end;
+    if: ""if" condition," instructions then end; elseif; the end goes after chain; end has no ','
+    functions:
+        A file with the name of the function + ".m"
+        function _returnVals_ = _functionName_(_parameters_)
+        the body of the function - sets the returnVal throughout
+        returnVals can be like: [_ret1_, _ret2_, ...]
+    addpath(): always also look at this path for functions
+Vectorization:
+    All these machine learning languages have numerical linear algebra libraries - run faster, less code
+    Example: h_θ(x) = ∑_(j=0)^n (θ_j*x_j) --> θ^T*x; different methods would result in different speeds
+    Vectorized implementation of gradient descent:
+        Gradient Descent: θ_j := θ_j - α * 1/m * ∑_(i=1)^m (h(x^(i)) - y^(i)) * x^(i)_j for all j
+        That way the vector θ := θ - α*δ for some vector δ
+        δ must be 1/m * ∑_(i=1)^m (h(x^(i)) - y^(i)) * x^(i)_j at position j
+        δ = 1/m * ∑_(i=1)^m (h(x^(i)) - y^(i)) * x^(i) (change is use x^(i) as vector)
+    Question: Suppose you have three vector valued variables u, v, w:
+        ⎡u_1⎤      ⎡v_1⎤      ⎡w_1⎤
+    u = ⎢u_2⎥, v = ⎢v_2⎥, w = ⎢w_2⎥
+        ⎣u_3⎦      ⎣v_3⎦      ⎣w_3⎦
+    Your code implements that following:
+    for j = 1:3,
+        u(j) = 2 * v(j) + 5 * w(j);
+    end
+    How would you vectorize this code?
+        u = 2 * v' * v * w + 5 * w' * w * v; (where v' denotes the transpose of v)
+        u = 2 * v + 5 * w
+        u = 5 * v + 2 * w
+        u = 2 + v + 5 + w
+    Answer: B
