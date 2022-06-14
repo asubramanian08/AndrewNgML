@@ -7,7 +7,7 @@ I took Coursera's [Machine Learning](https://www.coursera.org/learn/machine-lear
 ### Organization
 Each topic has its own folder:
 * The folder is named (week#).(topic#)-(Description)
-* Notes for each sub-section named (section#)-(Description).txt
+* Notes for each sub-section named (section#)-(Description).(txt/md)
 * Lecture PDF _private_
 * Quiz with question, answers, and score _private_
 * Octave exercise in a zip file _possibly there_
